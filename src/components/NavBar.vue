@@ -8,10 +8,8 @@
   </nav>
 </template>
 
-<script>
-export default {
-  name: "Navbar",
-};
+<script setup>
+import { RouterLink } from "vue-router";
 </script>
 
 <style scoped>
