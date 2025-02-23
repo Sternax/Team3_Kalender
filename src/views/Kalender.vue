@@ -1,5 +1,6 @@
 <script setup></script>
 <template>
-  <div>content</div>
+  <VCalendar />
+  <div></div>
 </template>
 <style scoped></style>
