@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-import Kalender from "./Kalender.vue";
-import About from "./About.vue";
-import Kontakt from "./Kontakt.vue";
+import Kalender from "./views/Kalender.vue";
+import About from "./views/About.vue";
+import Kontakt from "./views/Kontakt.vue";
 
 const routes = [
   { path: "/", component: Kalender },
