@@ -4,17 +4,20 @@ import { RouterLink } from "vue-router";
 
 <template>
     <footer>
-        <ul>
-            <li>
-                <RouterLink to="/">Kalender</RouterLink>
-            </li>
-            <li>
-                <RouterLink to="/">Om oss</RouterLink>
-            </li>
-            <li>
-                <RouterLink to="/">Kontakta oss</RouterLink>
-            </li>
-        </ul>
+        <nav>
+            <ul>
+                <li>
+                    <RouterLink to="/">Kalender</RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/">Om oss</RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/">Kontakta oss</RouterLink>
+                </li>
+            </ul>
+        </nav>
+        <p id="copy">&copy; 2025</p>
     </footer>
 </template>
 
@@ -22,8 +25,14 @@ import { RouterLink } from "vue-router";
 footer {
     background-color: #071826;
     color: white;
-    padding: 4rem 0;
     text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+
+nav {
+    padding: 4rem 0;
 }
 
 ul {
@@ -31,5 +40,16 @@ ul {
     justify-content: center;
     gap: 2rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    color: white;
+}
+
+#copy {
+    font-size: 12px;
+    color: gray;
 }
 </style>
