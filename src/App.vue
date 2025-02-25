@@ -3,7 +3,9 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/NavBar.vue";
 </script>
 <template>
-  <Navbar />
-  <div id="app"><RouterView /></div>
+  <div id="app">
+    <Navbar />
+    <RouterView />
+  </div>
 </template>
 <style scoped></style>
