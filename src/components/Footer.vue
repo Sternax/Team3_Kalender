@@ -1,5 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
+
+const year = new Date().getFullYear();
 </script>
 
 <template>
@@ -17,7 +19,7 @@ import { RouterLink } from "vue-router";
                 </li>
             </ul>
         </nav>
-        <p id="copy">&copy; 2025</p>
+        <p id="copy">&copy; {{ year }}</p>
     </footer>
 </template>
 
