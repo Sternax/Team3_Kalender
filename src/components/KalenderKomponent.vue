@@ -3,6 +3,7 @@ import { ScheduleXCalendar } from "@schedule-x/vue";
 import { createEventModalPlugin } from "@schedule-x/event-modal";
 // import { createEventsServicePlugin } from "@schedule-x/events-service";
 import { createDragAndDropPlugin } from "@schedule-x/drag-and-drop";
+import { createCurrentTimePlugin } from "@schedule-x/current-time";
 import {
   createCalendar,
   createViewDay,
@@ -27,7 +28,13 @@ const calendarApp = createCalendar({
     createViewMonthGrid(),
     createViewMonthAgenda(),
   ],
-  plugins: [eventModal, createDragAndDropPlugin()],
+  plugins: [
+    eventModal,
+    createDragAndDropPlugin(),
+    createCurrentTimePlugin({
+      fullWeekWidth: true,
+    }),
+  ],
   events: [
     {
       id: 1,
@@ -60,5 +67,13 @@ eventModal.close();
   height: 800px;
   max-height: 90vh;
   margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .sx-vue-calendar-wrapper {
+    margin-top: 80px;
+    width: 100%;
+    height: 600px;
+  }
 }
 </style>
