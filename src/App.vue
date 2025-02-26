@@ -3,14 +3,18 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/NavBar.vue";
 </script>
 
-
 <template>
   <div id="app">
     <Navbar />
-    
+
     <RouterView />
   </div>
 </template>
 
-
-<style scoped></style>
+<style scoped>
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
