@@ -22,8 +22,8 @@ const year = new Date().getFullYear();
         <div class="footer-bottom">
             <a href="https://github.com/Sternax/Team3_Kalender" target="_blank">
                 <svg
-                    width="32px"
-                    height="32px"
+                    width="24px"
+                    height="24px"
                     viewBox="0 0 20 20"
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +67,8 @@ footer {
     width: 100%;
     position: absolute;
     left: 0;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
 nav {
@@ -76,7 +78,7 @@ nav {
 ul {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -84,6 +86,7 @@ ul {
 
 li a {
     color: white;
+    text-decoration: none;
 }
 
 #copy {
@@ -94,6 +97,7 @@ li a {
 .footer-bottom {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
