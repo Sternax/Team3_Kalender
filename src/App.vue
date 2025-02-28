@@ -11,11 +11,3 @@ import Footer from "./components/Footer.vue";
         <Footer />
     </div>
 </template>
-
-<style scoped>
-#app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-</style>
