@@ -5,17 +5,11 @@ import Footer from "./components/Footer.vue";
 </script>
 
 <template>
-    <div id="app">
-        <Navbar />
-        <RouterView />
-        <Footer />
-    </div>
+  <div id="app">
+    <Navbar />
+    <RouterView />
+    <Footer />
+  </div>
 </template>
 
-<style scoped>
-#app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style scoped></style>
