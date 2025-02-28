@@ -4,7 +4,6 @@
     <ul class="nav-links">
       <li><RouterLink to="/">Kalender</RouterLink></li>
       <li><RouterLink to="/boka">Boka</RouterLink></li>
-      <li><RouterLink to="/kontakt">Kontakt</RouterLink></li>
       <li><RouterLink to="/about">Om oss</RouterLink></li>
     </ul>
   </nav>
