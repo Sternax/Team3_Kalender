@@ -78,15 +78,24 @@ nav {
 ul {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 4rem;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+@media screen and (max-width: 450px) {
+    ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
 li a {
     color: white;
     text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 #copy {
