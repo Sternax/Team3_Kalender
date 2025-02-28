@@ -1,7 +1,6 @@
 <script setup>
 import { ScheduleXCalendar } from "@schedule-x/vue";
 import { createEventModalPlugin } from "@schedule-x/event-modal";
-// import { createEventsServicePlugin } from "@schedule-x/events-service";
 import { createDragAndDropPlugin } from "@schedule-x/drag-and-drop";
 import { createCurrentTimePlugin } from "@schedule-x/current-time";
 import {
@@ -17,7 +16,6 @@ import "@schedule-x/theme-default/dist/index.css";
 const date = new Date();
 let currentDate = date.toJSON().slice(0, 10);
 
-// const eventsServicePlugin = createEventsServicePlugin();
 const eventModal = createEventModalPlugin();
 
 const calendarApp = createCalendar({
