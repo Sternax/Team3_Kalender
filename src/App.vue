@@ -4,7 +4,6 @@ import Navbar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
 </script>
 
-
 <template>
     <div id="app">
         <Navbar />
@@ -13,5 +12,10 @@ import Footer from "./components/Footer.vue";
     </div>
 </template>
 
-
-<style scoped></style>
+<style scoped>
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
