@@ -1,8 +1,10 @@
 <script setup>
 import { ScheduleXCalendar } from "@schedule-x/vue";
 import { createEventModalPlugin } from "@schedule-x/event-modal";
+=======
+// import { createEventsServicePlugin } from "@schedule-x/events-service";
 import { createDragAndDropPlugin } from "@schedule-x/drag-and-drop";
-import { createCurrentTimePlugin } from "@schedule-x/current-time";
+>>>>>>> c381529 (Implementerade nya schedule-x kalendern)
 import {
   createCalendar,
   createViewDay,
@@ -16,6 +18,10 @@ import "@schedule-x/theme-default/dist/index.css";
 const date = new Date();
 let currentDate = date.toJSON().slice(0, 10);
 
+<<<<<<< HEAD
+=======
+// const eventsServicePlugin = createEventsServicePlugin();
+>>>>>>> c381529 (Implementerade nya schedule-x kalendern)
 const eventModal = createEventModalPlugin();
 
 const calendarApp = createCalendar({
@@ -26,6 +32,7 @@ const calendarApp = createCalendar({
     createViewMonthGrid(),
     createViewMonthAgenda(),
   ],
+<<<<<<< HEAD
   plugins: [
     eventModal,
     createDragAndDropPlugin(),
@@ -33,6 +40,9 @@ const calendarApp = createCalendar({
       fullWeekWidth: true,
     }),
   ],
+=======
+  plugins: [eventModal, createDragAndDropPlugin()],
+>>>>>>> c381529 (Implementerade nya schedule-x kalendern)
   events: [
     {
       id: 1,
@@ -53,9 +63,9 @@ eventModal.close();
 </script>
 
 <template>
-  <div>
-    <ScheduleXCalendar :calendar-app="calendarApp"> </ScheduleXCalendar>
-  </div>
+    <div>
+        <ScheduleXCalendar :calendar-app="calendarApp"> </ScheduleXCalendar>
+    </div>
 </template>
 
 <style scoped>
@@ -66,6 +76,7 @@ eventModal.close();
   max-height: 90vh;
   margin-top: 50px;
 }
+<<<<<<< HEAD
 
 @media screen and (max-width: 768px) {
   .sx-vue-calendar-wrapper {
@@ -74,4 +85,6 @@ eventModal.close();
     height: 600px;
   }
 }
+=======
+>>>>>>> c381529 (Implementerade nya schedule-x kalendern)
 </style>
