@@ -1,5 +1,5 @@
 <script setup></script>
 <template>
-  <div>content</div>
+    <h1>Om oss</h1>
 </template>
 <style scoped></style>
