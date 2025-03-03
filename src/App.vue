@@ -7,9 +7,17 @@ import Footer from "./components/Footer.vue";
 <template>
   <div id="app">
     <Navbar />
-    <RouterView />
+    <div id="routerViewContainer">
+      <RouterView />
+    </div>
     <Footer />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#routerViewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

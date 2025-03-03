@@ -16,8 +16,10 @@ import "@schedule-x/theme-default/dist/index.css";
 const date = new Date();
 let currentDate = date.toJSON().slice(0, 10);
 
+//Plugin för "modal" som visas när man klickar på ett event
 const eventModal = createEventModalPlugin();
 
+//Kalenderappen
 const calendarApp = createCalendar({
   selectedDate: `${currentDate}`, // Hämtar dagens datum från funktionen ovan och sätter det som datumet som visas i kalendern
   views: [
@@ -33,6 +35,8 @@ const calendarApp = createCalendar({
       fullWeekWidth: true,
     }),
   ],
+
+  //Här lägger vi till events i kalendern
   events: [
     {
       id: 1,
