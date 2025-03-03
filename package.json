@@ -16,6 +16,7 @@
     "@schedule-x/theme-default": "^2.20.0",
     "@schedule-x/vue": "^2.18.0",
     "vue": "^3.5.13",
+    "vue-cal": "^5.0.1-rc.0",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
