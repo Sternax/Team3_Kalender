@@ -65,8 +65,6 @@ footer {
     color: white;
     text-align: center;
     width: 100%;
-    position: absolute;
-    left: 0;
     padding: 0 1rem;
     box-sizing: border-box;
 }
