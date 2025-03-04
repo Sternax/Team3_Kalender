@@ -9,11 +9,3 @@ import Footer from "./components/Footer.vue";
     <main><RouterView /></main>
     <Footer />
 </template>
-
-<style scoped>
-#routerViewContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-</style>
