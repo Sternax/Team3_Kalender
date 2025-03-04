@@ -1,9 +1,9 @@
 <template>
-  <h2>Boka Möte</h1>
   <div class="booking">
 
     <!--Enter email & Name-->
     <div class="left textInputs box">
+      <h2>Boka Möte</h2>
       <label for="name">Namn</label>
         <br>
         <input
@@ -12,11 +12,11 @@
           placeholder="Ange ditt namn"
           required
         />
-        <p v-if="!name" style="color: red;">
+        <p v-if="buttonClicked && !name" style="color: red;">
           Ange ett namn
         </p>
         <br>
-      <label for="email">Email</label>
+      <label for="email">E-post</label>
         <br>
         <input
           type="email"
@@ -24,10 +24,10 @@
           placeholder="dig@gmail.com"
           required
         />
-        <p v-if="!email" style="color: red;">
+        <p v-if="buttonClicked && !email" style="color: red;">
           Ange en e-postadress
         </p>
-        <p v-if="email && !isValidEmail(email)" style="color: red;">
+        <p v-if="buttonClicked && email && !isValidEmail(email)" style="color: red;">
           Ange en giltig e-postadress
         </p>
     </div>
@@ -42,6 +42,7 @@
           :value="time"
           v-model="selectedTime"
           :disabled="bookedTimes.includes(time)"
+          class="radioTimes"
         />
         <label :for="index">
           {{ time }}
@@ -50,7 +51,7 @@
     </div>
 
     <!--Booking button-->
-    <div class="left box">
+    <div class="left box submit">
       <button id="book-btn" @click="bookTime" :disabled="!selectedTime || !isValidEmail(email) || !email || !name">
         Boka tid
       </button>
@@ -64,6 +65,10 @@
           {{ booking.time }} - {{ booking.name }} - {{ booking.email }}
         </li>
       </ul>
+      <br>  
+      <p v-if="bookedTimes.length === 0" style="color: #FFF;">
+        Du har inga bokade tider just nu.
+      </p>
     </div>
 
 
@@ -81,9 +86,14 @@ export default {
     const selectedTime = ref(null)
     const bookedTimes = ref([])
     const name = ref('')
+    const buttonClicked = ref(false)
+    const formSubmitted = ref(false)
 
     //Function to book time
     const bookTime = () => {
+      buttonClicked.value = true
+      formSubmitted.value = false
+
       if (!selectedTime.value || !email.value || !name.value || !isValidEmail(email.value)) {
         return 
       }
@@ -103,6 +113,9 @@ export default {
       email.value = ''
       name.value = ''
       selectedTime.value = null
+
+      formSubmitted.value = true
+      buttonClicked.value = false
     }
 
     const isValidEmail = (email) => {
@@ -117,9 +130,10 @@ export default {
       bookedTimes,
       bookTime,
       isValidEmail,
-      name
+      name,
+      buttonClicked,
+      formSubmitted
     }
-
   }
 }
 </script>
@@ -131,16 +145,12 @@ export default {
   box-sizing: border-box;
 }
 
-h1 {
-  margin-top: 100px;
-}
-
 .booking {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 80%;
-  gap: 10px;
-  margin: auto;
+  gap: 15px;
+  margin: 20px auto 0;
 }
 
 .left {
@@ -153,9 +163,19 @@ h1 {
   grid-row: 1 /span 3
 }
 
-.box {
+.box:not(.submit) {
   padding: 20px;
   background-color: #146A8C;
+  border-radius: 5px;
+}
+
+.submit button{
+  padding: 5px;
+  font-size: 18px;
+}
+
+.submit {
+  text-align: center;
 }
 
 #book-btn {
@@ -168,6 +188,10 @@ h1 {
 .textInputs{
   display: flex;
   flex-direction: column;
+}
+
+.radioTimes {
+  margin-right: 5px;
 }
 
 .textInputs input {
