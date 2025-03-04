@@ -1,28 +1,22 @@
 <template>
   <h1>Boka Möte</h1>
   <div class="booking">
-
     <!--Enter email & Name-->
     <div class="left textInputs">
       <label for="name">Namn</label>
-      <br>
-      <input
-        type="text"
-        v-model="name"
-        placeholder="Ange ditt namn"
-        required
-      />
-      <br>
+      <br />
+      <input type="text" v-model="name" placeholder="Ange ditt namn" required />
+      <br />
       <label for="email">E-post</label>
-      <br>
+      <br />
       <input
         type="email"
         v-model="email"
         placeholder="dig@gmail.com"
         required
       />
-      <p v-if="email && !isValidEmail(email)" style="color: red;">
-      Ange en giltig mejladress
+      <p v-if="email && !isValidEmail(email)" style="color: red">
+        Ange en giltig mejladress
       </p>
     </div>
 
@@ -45,7 +39,11 @@
 
     <!--Booking button-->
     <div class="left">
-      <button id="book-btn" @click="bookTime" :disabled="!selectedTime || !isValidEmail(email) || !email">
+      <button
+        id="book-btn"
+        @click="bookTime"
+        :disabled="!selectedTime || !isValidEmail(email) || !email"
+      >
         Boka tid
       </button>
     </div>
@@ -59,39 +57,36 @@
         </li>
       </ul>
     </div>
-
-
   </div>
 </template>
 
-
 <script>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 export default {
   setup() {
-    const email = ref('')
-    const availableTimes = ref(["9:00", "9:30", "10:00"])
-    const selectedTime = ref(null)
-    const bookedTimes = ref([])
+    const email = ref("");
+    const availableTimes = ref(["9:00", "9:30", "10:00"]);
+    const selectedTime = ref(null);
+    const bookedTimes = ref([]);
 
     //Function to book time
     const bookTime = () => {
-      bookedTimes.value.push(selectedTime.value)
+      bookedTimes.value.push(selectedTime.value);
 
       availableTimes.value = availableTimes.value.filter(
         (time) => time !== selectedTime.value
-      )
+      );
 
       //Reset form values
-      email.value = ''
-      selectedTime.value = null
-    }
+      email.value = "";
+      selectedTime.value = null;
+    };
 
     const isValidEmail = (email) => {
-      const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
-      return re.test(email)
-    }
+      const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      return re.test(email);
+    };
 
     return {
       email,
@@ -99,15 +94,13 @@ export default {
       selectedTime,
       bookedTimes,
       bookTime,
-      isValidEmail
-    }
-
-  }
-}
+      isValidEmail,
+    };
+  },
+};
 </script>
 
 <style scoped>
-
 h1 {
   margin-top: 50px;
 }
@@ -121,22 +114,21 @@ h1 {
 
 .left {
   margin-left: 20px;
-
 }
 
 .right {
   grid-column: 2;
-  grid-row: 1 /span 3
+  grid-row: 1 / span 3;
 }
 
 #book-btn {
   color: black;
   font-size: 16px;
   border-radius: 5px;
-  background-color:#FFF;
+  background-color: #fff;
 }
 
-.textInputs{
+.textInputs {
   display: flex;
   flex-direction: column;
 }
