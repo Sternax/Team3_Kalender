@@ -1,6 +1,10 @@
 <template>
     <h1>Om oss</h1>
-    <section>
+    <p>
+        Tanken bakom projektet var att skapa en kalender som skulle göra det
+        enkelt för användarna att planera sina dagar.
+    </p>
+    <section class="team">
         <div class="card">
             <h2>Alexander</h2>
             <a href="">Github</a>
@@ -25,7 +29,7 @@
 </template>
 
 <style scoped>
-section {
+section.team {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
