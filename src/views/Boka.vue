@@ -1,11 +1,12 @@
 <template>
-  <h1>Boka Möte</h1>
   <div class="booking">
     <!--Enter email & Name-->
-    <div class="left textInputs">
+    <div class="left textInputs box">
+      <h2>Boka Möte</h2>
       <label for="name">Namn</label>
       <br />
       <input type="text" v-model="name" placeholder="Ange ditt namn" required />
+      <p v-if="buttonClicked && !name" style="color: red">Ange ett namn</p>
       <br />
       <label for="email">E-post</label>
       <br />
@@ -15,13 +16,19 @@
         placeholder="dig@gmail.com"
         required
       />
-      <p v-if="email && !isValidEmail(email)" style="color: red">
-        Ange en giltig mejladress
+      <p v-if="buttonClicked && !email" style="color: red">
+        Ange en e-postadress
+      </p>
+      <p
+        v-if="buttonClicked && email && !isValidEmail(email)"
+        style="color: red"
+      >
+        Ange en giltig e-postadress
       </p>
     </div>
 
     <!--Book a time-->
-    <div class="left">
+    <div class="left box">
       <h2>Välj en tid</h2>
       <div v-for="(time, index) in availableTimes" :key="index">
         <input
@@ -30,6 +37,7 @@
           :value="time"
           v-model="selectedTime"
           :disabled="bookedTimes.includes(time)"
+          class="radioTimes"
         />
         <label :for="index">
           {{ time }}
@@ -38,24 +46,28 @@
     </div>
 
     <!--Booking button-->
-    <div class="left">
+    <div class="left box submit">
       <button
         id="book-btn"
         @click="bookTime"
-        :disabled="!selectedTime || !isValidEmail(email) || !email"
+        :disabled="!selectedTime || !isValidEmail(email) || !email || !name"
       >
         Boka tid
       </button>
     </div>
 
     <!--Booked Times-->
-    <div class="right">
+    <div class="right box">
       <h2>Bokade Tider</h2>
       <ul>
-        <li v-for="(time, index) in bookedTimes" :key="index">
-          {{ time }}
+        <li v-for="(booking, index) in bookedTimes" :key="index">
+          {{ booking.time }} - {{ booking.name }} - {{ booking.email }}
         </li>
       </ul>
+      <br />
+      <p v-if="bookedTimes.length === 0" style="color: #fff">
+        Du har inga bokade tider just nu.
+      </p>
     </div>
   </div>
 </template>
@@ -69,10 +81,30 @@ export default {
     const availableTimes = ref(["9:00", "9:30", "10:00"]);
     const selectedTime = ref(null);
     const bookedTimes = ref([]);
+    const name = ref("");
+    const buttonClicked = ref(false);
+    const formSubmitted = ref(false);
 
     //Function to book time
     const bookTime = () => {
-      bookedTimes.value.push(selectedTime.value);
+      buttonClicked.value = true;
+      formSubmitted.value = false;
+
+      if (
+        !selectedTime.value ||
+        !email.value ||
+        !name.value ||
+        !isValidEmail(email.value)
+      ) {
+        return;
+      }
+
+      //Pushing the inputs to the booked times array
+      bookedTimes.value.push({
+        name: name.value,
+        email: email.value,
+        time: selectedTime.value,
+      });
 
       availableTimes.value = availableTimes.value.filter(
         (time) => time !== selectedTime.value
@@ -80,7 +112,11 @@ export default {
 
       //Reset form values
       email.value = "";
+      name.value = "";
       selectedTime.value = null;
+
+      formSubmitted.value = true;
+      buttonClicked.value = false;
     };
 
     const isValidEmail = (email) => {
@@ -95,30 +131,66 @@ export default {
       bookedTimes,
       bookTime,
       isValidEmail,
+      name,
+      buttonClicked,
+      formSubmitted,
     };
   },
 };
 </script>
 
 <style scoped>
-h1 {
-  margin-top: 50px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .booking {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
+  width: 80%;
+  gap: 15px;
+  margin: 20px auto 0;
 }
 
 .left {
-  margin-left: 20px;
+  grid-column: 1;
 }
 
 .right {
   grid-column: 2;
   grid-row: 1 / span 3;
+}
+
+.box:not(.submit) {
+  padding: 20px;
+  background-color: #146a8c;
+  border-radius: 5px;
+}
+
+.submit button {
+  padding: 5px;
+  font-size: 18px;
+}
+
+.submit {
+  text-align: center;
+}
+
+.box:not(.submit) {
+  padding: 20px;
+  background-color: #146a8c;
+  border-radius: 5px;
+}
+
+.submit button {
+  padding: 5px;
+  font-size: 18px;
+}
+
+.submit {
+  text-align: center;
 }
 
 #book-btn {
@@ -131,6 +203,10 @@ h1 {
 .textInputs {
   display: flex;
   flex-direction: column;
+}
+
+.radioTimes {
+  margin-right: 5px;
 }
 
 .textInputs input {

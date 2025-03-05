@@ -56,6 +56,7 @@ const createEvent = () => {
 
 .eventTitle {
   margin-bottom: 10px;
+  padding: 5px;
 }
 .eventTime {
   margin-bottom: 10px;
