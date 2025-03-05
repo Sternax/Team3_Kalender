@@ -30,19 +30,26 @@ const createEvent = () => {
     <button @click="createEvent">Add Event</button>
   </div>
   <div>
-    <vue-cal dark editable-events :events="events" ref="vuecalRef" />
+    <vue-cal
+      dark
+      editable-events
+      :events="events"
+      ref="vuecalRef"
+      :views="['day', 'week', 'month', 'year']"
+    />
   </div>
 </template>
 <style scoped>
 /* CSS för dekstopvy av kalendern */
 .vuecal {
-  height: 600px;
-  width: 1500px;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  --vuecal-height: 600px;
+  width: 1200px;
+  margin: 0 auto;
 
   --vuecal-primary-color: #0b3b59;
-  --vuecal-base-color: #268ea6;
+  --vuecal-secondary-color: #071826;
+  --vuecal-base-color: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* CSS för desktopvy av AddEvent-funktion/formulär */
