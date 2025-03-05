@@ -42,7 +42,9 @@ const createEvent = () => {
   margin-bottom: 60px;
 
   --vuecal-primary-color: #0b3b59;
-  --vuecal-base-color: #268ea6;
+  --vuecal-header-color: var(-vuecal-base-color);
+  --vuecal-base-color: #3aa6c8; /*#268ea6 */
+  /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); --  färgbyte - font weight ökning.*/
 }
 
 /* CSS för desktopvy av AddEvent-funktion/formulär */
