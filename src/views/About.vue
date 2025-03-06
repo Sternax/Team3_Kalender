@@ -1,35 +1,46 @@
 <template>
     <h1>Om oss</h1>
     <p>
-        Tanken bakom projektet var att skapa en kalender som skulle göra det
-        enkelt för användarna att planera sina dagar.
+        Tanken bakom projektet var att skapa en användarvänlig kalender som
+        underlättar planeringen av användarnas dagliga aktiviteter.
     </p>
-    <section class="team">
-        <div class="card">
-            <h2>Alexander</h2>
-            <a href="">Github</a>
-        </div>
-        <div class="card">
-            <h2>Max</h2>
-            <a href="">Github</a>
-        </div>
-        <div class="card">
-            <h2>Axel</h2>
-            <a href="">Github</a>
-        </div>
-        <div class="card">
-            <h2>Anton</h2>
-            <a href="">Github</a>
-        </div>
-        <div class="card">
-            <h2>Jesper</h2>
-            <a href="">Github</a>
+    <section>
+        <h2>Vårt team</h2>
+        <div class="team">
+            <div class="card">
+                <h3>Alexander</h3>
+                <a href="">Github</a>
+            </div>
+            <div class="card">
+                <h3>Max</h3>
+                <a href="">Github</a>
+            </div>
+            <div class="card">
+                <h3>Axel</h3>
+                <a href="">Github</a>
+            </div>
+            <div class="card">
+                <h3>Anton</h3>
+                <a href="">Github</a>
+            </div>
+            <div class="card">
+                <h3>Jesper</h3>
+                <a href="">Github</a>
+            </div>
         </div>
     </section>
 </template>
 
 <style scoped>
-section.team {
+section {
+    padding: 1rem 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+.team {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
@@ -42,8 +53,9 @@ section.team {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-h2 {
+h3 {
     margin: 0;
+    font-size: 1.25rem;
 }
 
 a {
