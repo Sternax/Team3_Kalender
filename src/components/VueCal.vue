@@ -49,6 +49,7 @@ const createEvent = () => {
   --vuecal-primary-color: #0b3b59;
   --vuecal-secondary-color: #071826;
   --vuecal-base-color: white;
+  background-color: #071826;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
