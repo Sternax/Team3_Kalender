@@ -101,6 +101,7 @@ const menuOpen = ref(false);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     padding: 5px 0 0 0;
+    border-bottom-left-radius: 5px;
   }
 
   .nav-links {
