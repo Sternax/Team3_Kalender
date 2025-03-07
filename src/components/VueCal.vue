@@ -30,14 +30,14 @@ const createEvent = () => {
     <button @click="createEvent">Add Event</button>
   </div>
   <div>
-    <vue-cal dark editable-events :events="events" ref="vuecalRef" />
+    <vue-cal dark editable-events :events="events" ref="vuecalRef" :views="['day', 'week', 'month', 'year']"/>
   </div>
 </template>
 <style scoped>
 /* CSS för dekstopvy av kalendern */
 .vuecal {
   height: 600px;
-  width: 1500px;
+  width: 1200px;
   margin-top: 60px;
   margin-bottom: 60px;
 
@@ -60,5 +60,28 @@ const createEvent = () => {
 }
 .eventTime {
   margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+  /* CSS för mobilvy av kalendern */
+  .vuecal {
+    height: 600px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* CSS för mobilvy av AddEvent-funktion/formulär */
+  #eventForm {
+    padding: 30px 0 10px 0;
+  }
+
+  .eventTitle {
+    margin-bottom: 8px;
+  }
+  .eventTime {
+    margin-bottom: 8px;
+  }
 }
 </style>
