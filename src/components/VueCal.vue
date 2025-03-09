@@ -210,7 +210,6 @@ const createEvent = () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     background-color: #071826;
     width: 80%;
     border-radius: 5px;
