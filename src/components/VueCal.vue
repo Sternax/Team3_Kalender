@@ -42,9 +42,10 @@ const createEvent = () => {
 <style scoped>
 /* CSS för dekstopvy av kalendern */
 .vuecal {
-  --vuecal-height: 600px;
+  height: 600px;
   width: 1200px;
-  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
 
   --vuecal-primary-color: #0b3b59;
   --vuecal-secondary-color: #071826;
@@ -68,5 +69,27 @@ const createEvent = () => {
 }
 .eventTime {
   margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  /* CSS för mobilvy av kalendern */
+  .vuecal {
+    height: 600px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* CSS för mobilvy av AddEvent-funktion/formulär */
+  #eventForm {
+    padding: 30px 0 10px 0;
+  }
+
+  .eventTitle {
+    margin-bottom: 8px;
+  }
+  .eventTime {
+    margin-bottom: 8px;
+  }
 }
 </style>
