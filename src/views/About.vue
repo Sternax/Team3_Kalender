@@ -2,29 +2,36 @@
     <h1>Om oss</h1>
     <p>
         Tanken bakom projektet var att skapa en användarvänlig kalender som
-        underlättar planeringen av användarnas dagliga aktiviteter.
+        underlättar planeringen av användarnas dagliga aktiviteter. Genom nära
+        samarbete och kontinuerliga förbättringar har vi utvecklat en intuitiv
+        och tillgänglig lösning som möter användarnas behov.
     </p>
     <section>
         <h2>Vårt team</h2>
         <div class="team">
             <div class="card">
                 <h3>Alexander</h3>
+                <p>Frontend-utvecklare</p>
                 <a href="">Github</a>
             </div>
             <div class="card">
                 <h3>Max</h3>
+                <p>Frontend-utvecklare</p>
                 <a href="">Github</a>
             </div>
             <div class="card">
                 <h3>Axel</h3>
+                <p>Frontend-utvecklare</p>
                 <a href="">Github</a>
             </div>
             <div class="card">
                 <h3>Anton</h3>
+                <p>Frontend-utvecklare</p>
                 <a href="">Github</a>
             </div>
             <div class="card">
                 <h3>Jesper</h3>
+                <p>Frontend-utvecklare</p>
                 <a href="">Github</a>
             </div>
         </div>
