@@ -178,6 +178,7 @@ export default {
   gap: 20px;
   margin: 70px auto 0;
   justify-content: center;
+  color: #FFF;
 }
 
 .left {
