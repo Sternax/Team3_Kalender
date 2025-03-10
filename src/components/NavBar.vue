@@ -67,7 +67,7 @@ const menuOpen = ref(false);
   font-weight: bold;
   padding: 8px 12px;
   border-radius: 5px;
-  transition: background 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -94,7 +94,7 @@ const menuOpen = ref(false);
     position: absolute;
     top: 62px;
     right: 0;
-    background-color: rgba(11, 59, 89);
+    background-color: #08182b;
     flex-direction: column;
     width: 150px;
     text-align: center;

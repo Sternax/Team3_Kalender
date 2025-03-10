@@ -62,7 +62,7 @@
           @click="bookTime"
           :disabled="availableTimes.length === 0"
         >
-          Boka tid
+          Lägg till bokning
         </button>
       </div>
     </div>
@@ -241,6 +241,7 @@ export default {
   background-color: #242424;
   border-radius: 5px;
   border: 1px solid white;
+  color: white;
 }
 
 .right.box li {
@@ -274,6 +275,10 @@ export default {
     width: 80%;
     gap: 20px;
     margin: 20px auto 0;
+  }
+
+  #book-btn {
+    width: 33%;
   }
 
   .left {

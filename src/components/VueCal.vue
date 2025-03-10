@@ -44,7 +44,7 @@ const createEvent = () => {
         placeholder="Eventnamn &#128197"/>
       <input class="eventTime" type="datetime-local" v-model="eventStart" />
       <input class="eventTime" type="datetime-local" v-model="eventEnd" />
-      <button id="eventBtn" @click="createEvent">Lägg Till Event</button>
+      <button id="eventBtn" @click="createEvent">Lägg till kalender</button>
     </div>
 
     <div>
@@ -72,20 +72,14 @@ const createEvent = () => {
   --vuecal-base-color: white;
   background-color: #071826;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  
-}
-
-.vuecal__nav--today.vuecal__nav--default {
-  text-transform: lowercase; 
+  font-family: 'Poppins';  
 }
 
 .vuecal--default-theme  {
   background-color: #08182b;
+  border-radius: 15px;
 }
-
-.vuecal--default-theme {
-  --vuecal-border-radius: 15px;
-}
+  
 #mobileDropdownButton {
   display: none;
   width: 100%;
@@ -95,6 +89,8 @@ const createEvent = () => {
   border: none;
   cursor: pointer;
   margin-bottom: 10px;
+  font-family: 'Poppins';
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hidden {
@@ -109,7 +105,8 @@ const createEvent = () => {
   margin-right: 300px;
   --vuecal-primary-color: #08182b; 
   --vuecal-header-color: var(-vuecal-base-color);
-  --vuecal-base-color: #fff; /* #59b4d1(wcag blå) */
+  --vuecal-base-color: #fff; 
+  
 }
 
 /* CSS för desktopvy av AddEvent-funktion/formulär */
