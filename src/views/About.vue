@@ -12,27 +12,29 @@
             <div class="card">
                 <h3>Alexander</h3>
                 <p>Frontend-utvecklare</p>
-                <a href="">Github</a>
+                <a target="_blank" href="https://github.com/alexanderiksson"
+                    >Github</a
+                >
             </div>
             <div class="card">
                 <h3>Max</h3>
                 <p>Frontend-utvecklare</p>
-                <a href="">Github</a>
+                <a target="_blank" href="https://github.com/Max-iths">Github</a>
             </div>
             <div class="card">
                 <h3>Axel</h3>
                 <p>Frontend-utvecklare</p>
-                <a href="">Github</a>
+                <a target="_blank" href="https://github.com/Sternax">Github</a>
             </div>
             <div class="card">
                 <h3>Anton</h3>
                 <p>Frontend-utvecklare</p>
-                <a href="">Github</a>
+                <a target="_blank" href="https://github.com/AJenzen">Github</a>
             </div>
             <div class="card">
                 <h3>Jesper</h3>
                 <p>Frontend-utvecklare</p>
-                <a href="">Github</a>
+                <a target="_blank" href="">Github</a>
             </div>
         </div>
     </section>
@@ -73,5 +75,9 @@ a {
     border-radius: 4px;
     margin-top: 2rem;
     display: inline-block;
+}
+
+p {
+    max-width: 700px;
 }
 </style>
