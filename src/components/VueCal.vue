@@ -167,7 +167,7 @@ const createEvent = () => {
   /* CSS för mobilvy av kalendern */
   .vuecal {
     height: 600px;
-    width: 100%;
+    width: 358px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
