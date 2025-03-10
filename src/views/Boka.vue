@@ -30,6 +30,17 @@
     <!--Book a time-->
     <div class="left box">
       <h2>Välj en tid</h2>
+
+      <!--Message for no available times -->
+      <p v-if="availableTimes.length === 0">
+        Det finns inga lediga tider just nu.
+      </p>
+      <p
+        v-if="availableTimes.length > 0 && !selectedTime && buttonClicked"
+        style="color: red"
+      >
+        Du måste välja en tid att boka
+      </p>
       <div v-for="(time, index) in availableTimes" :key="index">
         <input
           type="radio"
@@ -43,17 +54,17 @@
           {{ time }}
         </label>
       </div>
-    </div>
 
-    <!--Booking button-->
-    <div class="left box submit">
-      <button
-        id="book-btn"
-        @click="bookTime"
-        :disabled="!selectedTime || !isValidEmail(email) || !email || !name"
-      >
-        Boka tid
-      </button>
+      <!--Booking button-->
+      <div class="left box submit">
+        <button
+          id="book-btn"
+          @click="bookTime"
+          :disabled="availableTimes.length === 0"
+        >
+          Boka tid
+        </button>
+      </div>
     </div>
 
     <!--Booked Times-->
@@ -62,9 +73,16 @@
       <ul>
         <li v-for="(booking, index) in bookedTimes" :key="index">
           {{ booking.time }} - {{ booking.name }} - {{ booking.email }}
+          <button v-if="booking" class="cancel-btn" @click="avboka(index)">
+            Avboka
+          </button>
         </li>
       </ul>
       <br />
+      <p v-if="bookedTimes.length === 0" style="color: #fff">
+        <br />
+      </p>
+
       <p v-if="bookedTimes.length === 0" style="color: #fff">
         Du har inga bokade tider just nu.
       </p>
@@ -97,6 +115,8 @@ export default {
         !isValidEmail(email.value)
       ) {
         return;
+      if (!selectedTime.value || !email.value || !name.value || !isValidEmail(email.value)) {
+        return
       }
 
       //Pushing the inputs to the booked times array
@@ -119,6 +139,11 @@ export default {
       buttonClicked.value = false;
     };
 
+    const avboka = (index) => {
+      const cancelledBooking = bookedTimes.value.splice(index, 1)[0];
+      availableTimes.value.push(cancelledBooking.time);
+    };
+
     const isValidEmail = (email) => {
       const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
       return re.test(email);
@@ -134,6 +159,7 @@ export default {
       name,
       buttonClicked,
       formSubmitted,
+      avboka,
     };
   },
 };
@@ -150,8 +176,10 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 80%;
-  gap: 15px;
-  margin: 20px auto 0;
+  gap: 20px;
+  margin: 70px auto 0;
+  justify-content: center;
+  color: #fff;
 }
 
 .left {
@@ -160,28 +188,17 @@ export default {
 
 .right {
   grid-column: 2;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 2;
 }
 
-.box:not(.submit) {
+.box {
   padding: 20px;
-  background-color: #146a8c;
+  background-color: #0b3b59;
   border-radius: 5px;
 }
 
-.submit button {
-  padding: 5px;
-  font-size: 18px;
-}
-
-.submit {
-  text-align: center;
-}
-
 .box:not(.submit) {
-  padding: 20px;
-  background-color: #146a8c;
-  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.43), 0 6px 20px rgba(0, 0, 0, 0.43);
 }
 
 .submit button {
@@ -200,6 +217,12 @@ export default {
   background-color: #fff;
 }
 
+#book-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: gray;
+}
+
 .textInputs {
   display: flex;
   flex-direction: column;
@@ -211,5 +234,49 @@ export default {
 
 .textInputs input {
   width: 300px;
+  padding: 5px;
+}
+
+.right.box li {
+  margin-left: 15px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  list-style: none;
+}
+
+.cancel-btn {
+  background-color: red;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.cancel-btn:hover {
+  background-color: red;
+  padding: 5px;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+@media (max-width: 955px) {
+  .booking {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 80%;
+    gap: 20px;
+    margin: 20px auto 0;
+  }
+
+  .left {
+    grid-column: 1;
+  }
+
+  .right {
+    grid-column: 1;
+    grid-row: 1;
+  }
 }
 </style>

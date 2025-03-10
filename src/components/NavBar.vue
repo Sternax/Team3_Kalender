@@ -92,15 +92,18 @@ const menuOpen = ref(false);
 
   .nav-links {
     position: absolute;
-    top: 60px;
+    top: 62px;
     right: 0;
-    background-color: rgba(11, 59, 89, 0.95);
+    background-color: rgba(11, 59, 89);
     flex-direction: column;
     width: 150px;
     text-align: center;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     padding: 5px 0 0 0;
+    border-bottom-left-radius: 5px;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
   }
 
   .nav-links {
