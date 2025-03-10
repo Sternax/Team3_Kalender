@@ -9,6 +9,9 @@ Sorterat i ordning av kontrast
 #146A8C
 #268EA6
 
+#08182b - navbar, footer etc
+#59b4d1 - textfärg
+
 # Designval
 
 Arbeta med rundade kanter/border-radius på 5px

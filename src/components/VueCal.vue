@@ -41,10 +41,10 @@ const createEvent = () => {
   margin-top: 60px;
   margin-bottom: 60px;
 
-  --vuecal-primary-color: #0b3b59;
+  --vuecal-primary-color: #08182b; /* -- nya färgen: #08182b deep dark blue --  -- ursprungliga färgen: #0b3b59; --  */
   --vuecal-header-color: var(-vuecal-base-color);
-  --vuecal-base-color: #3aa6c8; /*#268ea6 */
-  /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); --  färgbyte - font weight ökning.*/
+  --vuecal-base-color: #59b4d1; /* -- ursprungliga färgen: #268ea6 -- annan färgen: 3aa6c8; -- en annan ny färg ANVÄND: #59b4d1(wcag) */
+  /*font weight ökning.*/
 }
 
 /* CSS för desktopvy av AddEvent-funktion/formulär */

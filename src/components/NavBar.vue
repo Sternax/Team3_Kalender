@@ -38,7 +38,7 @@ const menuOpen = ref(false);
   align-items: center;
   width: 100%;
   padding: 5px 20px;
-  background-color: #0b3b59;
+  background-color: #08182b; /* ursprunglig färg - #0b3b59; */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   z-index: 1000;
