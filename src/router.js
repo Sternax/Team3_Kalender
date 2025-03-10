@@ -7,7 +7,7 @@ import Boka from "./views/Boka.vue";
 const routes = [
   { path: "/", component: Kalender },
   { path: "/about", component: About },
-  { path: "/boka", component: Boka }
+  { path: "/boka", component: Boka },
 ];
 
 const router = createRouter({

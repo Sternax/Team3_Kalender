@@ -58,7 +58,7 @@ const year = new Date().getFullYear();
 
 <style scoped>
 footer {
-  background-color: #08182b; /*ursprunglig färg: #071826;*/
+  background-color: #192236; /*ursprunglig färg: #071826;*/
   color: white;
   text-align: center;
   width: 100%;

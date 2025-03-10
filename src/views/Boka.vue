@@ -115,8 +115,6 @@ export default {
         !isValidEmail(email.value)
       ) {
         return;
-      if (!selectedTime.value || !email.value || !name.value || !isValidEmail(email.value)) {
-        return
       }
 
       //Pushing the inputs to the booked times array
@@ -170,6 +168,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins";
 }
 
 .booking {
@@ -193,7 +192,7 @@ export default {
 
 .box {
   padding: 20px;
-  background-color: #0b3b59;
+  background-color: #192236;
   border-radius: 5px;
 }
 
@@ -213,8 +212,12 @@ export default {
 #book-btn {
   color: black;
   font-size: 16px;
+  border: 1px solid white;
   border-radius: 5px;
-  background-color: #fff;
+  color: white;
+  background-color: #3e5586;
+  padding: 8px;
+  width: 25%;
 }
 
 #book-btn:disabled {
@@ -235,6 +238,9 @@ export default {
 .textInputs input {
   width: 300px;
   padding: 5px;
+  background-color: #242424;
+  border-radius: 5px;
+  border: 1px solid white;
 }
 
 .right.box li {

@@ -41,8 +41,7 @@ const createEvent = () => {
         class="eventTitle"
         type="text"
         v-model="eventTitle"
-        placeholder="Eventnamn &#128197"
-      />
+        placeholder="Eventnamn &#128197"/>
       <input class="eventTime" type="datetime-local" v-model="eventStart" />
       <input class="eventTime" type="datetime-local" v-model="eventEnd" />
       <button id="eventBtn" @click="createEvent">Lägg Till Event</button>
@@ -68,18 +67,30 @@ const createEvent = () => {
   margin-top: 60px;
   margin-bottom: 60px;
 
-  --vuecal-primary-color: #0b3b59;
-  --vuecal-secondary-color: #071826;
+  --vuecal-primary-color: #08182b;
+  --vuecal-secondary-color: #08182b;
   --vuecal-base-color: white;
   background-color: #071826;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  
 }
 
+.vuecal__nav--today.vuecal__nav--default {
+  text-transform: lowercase; 
+}
+
+.vuecal--default-theme  {
+  background-color: #08182b;
+}
+
+.vuecal--default-theme {
+  --vuecal-border-radius: 15px;
+}
 #mobileDropdownButton {
   display: none;
   width: 100%;
   padding: 10px;
-  background-color: #0b3b59;
+  background-color: #3e5586;
   color: white;
   border: none;
   cursor: pointer;
@@ -96,10 +107,9 @@ const createEvent = () => {
   justify-content: center;
   align-items: center;
   margin-right: 300px;
-  --vuecal-primary-color: #08182b; /* -- nya färgen: #08182b deep dark blue --  -- ursprungliga färgen: #0b3b59; --  */
+  --vuecal-primary-color: #08182b; 
   --vuecal-header-color: var(-vuecal-base-color);
-  --vuecal-base-color: #59b4d1; /* -- ursprungliga färgen: #268ea6 -- annan färgen: 3aa6c8; -- en annan ny färg ANVÄND: #59b4d1(wcag) */
-  /*font weight ökning.*/
+  --vuecal-base-color: #fff; /* #59b4d1(wcag blå) */
 }
 
 /* CSS för desktopvy av AddEvent-funktion/formulär */
@@ -109,10 +119,10 @@ const createEvent = () => {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #071826;
+  background-color: #192236;  
   width: 250px;
   margin-right: 30px;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
@@ -144,6 +154,7 @@ const createEvent = () => {
   border: 1px solid white;
   border-radius: 5px;
   color: white;
+  font-family: 'Poppins';
 }
 .eventTime {
   margin-bottom: 10px;
@@ -153,18 +164,20 @@ const createEvent = () => {
   border: 1px solid white;
   border-radius: 5px;
   color: white;
+  font-family: 'Poppins';
 }
 
 #eventBtn {
   padding: 10px;
   margin-top: 10px;
   width: 60%;
-  background-color: #0B3B59;
+  background-color: #3e5586;
   color: white;
   border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins';
 }
 
 @media (max-width: 768px) {
@@ -176,11 +189,13 @@ const createEvent = () => {
     margin-bottom: 20px;
   }
 
+
+
   #mobileDropdownButton {
     display: block;
     border-radius: 5px;
     margin-top: 20px;
-    background-color: #0b3b59;
+    background-color: #3e5586;
   }
 
 
@@ -214,9 +229,9 @@ const createEvent = () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #071826;
+    background-color: #08182b;
     width: 80%;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 20px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   }
@@ -231,3 +246,4 @@ const createEvent = () => {
   }
 }
 </style>
+  
