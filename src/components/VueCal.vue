@@ -14,6 +14,56 @@ const eventTitle = ref("");
 const eventStart = ref("");
 const eventEnd = ref("");
 
+const events =[
+  {
+    start: "2025-03-11 10:00",
+    end: "2025-03-11 12:00",
+    title: "Presentation Agil",
+  },
+  {
+    start: "2025-03-11 16:00",
+    end: "2025-03-11 18:00",
+    title: "Träning",
+  },
+  {
+    start: "2025-03-15 17:00",
+    end: "2025-03-15 22:00",
+    title: "Födelsedagsmiddag",
+  },
+  {
+    start: "2025-03-16 08:00",
+    end: "2025-03-13 10:00",
+    title: "Löprunda 15km",
+  },
+  {
+    start: "2025-03-16 12:00",
+    end: "2025-03-16 14:00",
+    title: "Veckohandling",
+  },
+  {
+    start: "2025-03-14 18:00",
+    end: "2025-03-14 20:00",
+    title: "Ungarnas fotbollsmatch",
+  },
+  {
+    start: "2025-03-14 16:00",
+    end: "2025-03-14 17:00",
+    title: "Inlämningsuppgift",
+  },
+  {
+    start: "2025-03-12 10:00",
+    end: "2025-03-12 18:00",
+    title: "Jobb",
+  },
+  {
+    start: "2025-03-13 08:00",
+    end: "2025-03-13 16:00",
+    title: "Crunchtime och sistaminutenfix",
+  }
+
+
+]
+
 const vuecalRef = ref(null);
 const createEvent = () => {
   vuecalRef.value.view.createEvent({
@@ -77,7 +127,7 @@ const createEvent = () => {
 
 #mobileDropdownButton {
   display: none;
-  width: 100%;
+  width: 325px;
   padding: 10px;
   background-color: #0b3b59;
   color: white;
@@ -167,7 +217,7 @@ const createEvent = () => {
   /* CSS för mobilvy av kalendern */
   .vuecal {
     height: 600px;
-    width: 100%;
+    width: 358px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -176,6 +226,7 @@ const createEvent = () => {
     display: block;
     border-radius: 5px;
     margin-top: 20px;
+    margin-bottom: 0px;
     background-color: #0b3b59;
   }
 
